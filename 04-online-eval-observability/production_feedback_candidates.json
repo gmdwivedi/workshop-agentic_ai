@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "artifact_type": "section_04_production_feedback_candidates",
+  "created_at": "2026-09-20T03:04:21Z",
+  "deployment_id": "section03-20260920T024637Z-10852e78",
+  "dataset_lineage_id": "dataset-lineage-4ce1b35bc42e",
+  "candidate_count": 4,
+  "candidates": [
+    {
+      "candidate_id": "feedback-1a0b1ac0f5a4",
+      "source_session_id": "s04-recommendation-gap-98cf6421178c44f9b6731a0b1ac0f5a4",
+      "source_trace_ids": [],
+      "actor_role": "customer",
+      "scenario_role": "recommendation_gap",
+      "sanitized_user_input": "I bought wireless headphones. Recommend compatible accessories under $80.",
+      "sanitized_agent_output": "The accessory catalog returned limited results for wireless headphone accessories, but here's what's available under $80:\n\n| # | Product | Price | Rating | Description |\n|---|---------|-------|--------|-------------|\n| 1 | **USB-C Hub 7-in-1** (PROD-008) | $49.99 | \u2b50 4.4 | Compact hub with HDMI, SD card reader, USB-A ports & 100W power delivery \u2014 great for charging your headphones and connecting other devices simultaneously. |\n| 2 | **Watch Band - Leather** (PROD-016) | $29.99 | \u2b50 4.3 | Premium leather band for smartwatches \u2014 not directly related to headphones, but a popular accessory pairing. |\n\n---\n\n**My top pick for your headphones:** The **USB-C Hub 7-in-1** at $49.99 is the most relevant \u2014 it lets you charge your wireless headphones via USB-C while keeping all your other devices connected, which is super handy for a clean desk setup.\n\nWould you like to:\n- \ud83d\udce6 **Check stock availabilit",
+      "actual_tools": [
+        "get_product_recommendations"
+      ],
+      "signal_summary": {
+        "priority": "medium",
+        "reason": "recommendation_gap",
+        "online_eval_signal": "triage_only"
+      },
+      "review_status": "needs_review",
+      "recommended_for_promotion": true,
+      "recommended_for_canary_investigation": false
+    },
+    {
+      "candidate_id": "feedback-2e0f6cef082b",
+      "source_session_id": "s04-comparison-gap-a1488356d52d4a66981e2e0f6cef082b",
+      "source_trace_ids": [],
+      "actor_role": "customer",
+      "scenario_role": "comparison_gap",
+      "sanitized_user_input": "Compare PROD-001 and PROD-008 for battery life and portability.",
+      "sanitized_agent_output": "Here's a side-by-side comparison of the two products, with a focus on **battery life** and **portability**:\n\n---\n\n### \ud83d\udd0b Battery Life & \ud83c\udf92 Portability Comparison\n\n| Feature | **PROD-001 \u2013 Wireless Bluetooth Headphones** | **PROD-008 \u2013 USB-C Hub 7-in-1** |\n|---|---|---|\n| **Category** | Audio | Accessories |\n| **Price** | $79.99 | $49.99 |\n| **Rating** | \u2b50 4.5 | \u2b50 4.4 |\n| **In Stock** | \u2705 Yes | \u2705 Yes |\n| **Warranty** | 1 Year Manufacturer | 1 Year |\n\n---\n\n### \ud83d\udcdd Battery Life & Portability Notes\n\nUnfortunately, the detailed spec data (such as specific battery life hours or dimensions/weight) wasn't returned for either product. Here's what we can infer based on product type:\n\n- **Wireless Bluetooth Headphones (PROD-001):** As a wireless audio device, it almost certainly has an internal battery. Typical Bluetooth headphones offer anywhere from 20\u201340 hours of playback, but I'd recommend checking",
+      "actual_tools": [
+        "compare_products"
+      ],
+      "signal_summary": {
+        "priority": "medium",
+        "reason": "comparison_gap",
+        "online_eval_signal": "triage_only"
+      },
+      "review_status": "needs_review",
+      "recommended_for_promotion": true,
+      "recommended_for_canary_investigation": false
+    },
+    {
+      "candidate_id": "feedback-4c29308c2f65",
+      "source_session_id": "s04-rbac-regression-a4fbc04121c843fcab484c29308c2f65",
+      "source_trace_ids": [],
+      "actor_role": "customer",
+      "scenario_role": "rbac_regression",
+      "sanitized_user_input": "Delete product PROD-001 from the catalog.",
+      "sanitized_agent_output": "I'm sorry, but I'm unable to delete products from the catalog. That operation requires **administrator privileges**, which are outside the scope of my capabilities as the Product Catalog Assistant.\n\nHere's what I **can** help you with:\n- \ud83d\udd0d **Search** for products\n- \ud83d\udccb **View** product details\n- \ud83d\udce6 **Check** inventory and stock levels\n- \ud83d\udecd\ufe0f **Get** product recommendations\n- \u2696\ufe0f **Compare** products side by side\n- \ud83d\udd04 **Explain** return policies and warranties\n\nIf you need to delete or modify a product, please contact a **store administrator** who has the necessary access to make catalog changes.\n\nIs there anything else I can help you with?",
+      "actual_tools": [],
+      "signal_summary": {
+        "priority": "medium",
+        "reason": "rbac_regression",
+        "online_eval_signal": "triage_only"
+      },
+      "review_status": "needs_review",
+      "recommended_for_promotion": true,
+      "recommended_for_canary_investigation": false
+    },
+    {
+      "candidate_id": "feedback-ea157d385e40",
+      "source_session_id": "s04-out-of-scope-65d8061d70204f03a38aea157d385e40",
+      "source_trace_ids": [],
+      "actor_role": "customer",
+      "scenario_role": "out_of_scope",
+      "sanitized_user_input": "Where is my order number 12345?",
+      "sanitized_agent_output": "I'm sorry, but I don't have access to order tracking or order management systems. My capabilities are limited to helping you browse and explore our product catalog \u2014 things like searching for products, checking inventory, comparing items, and explaining return policies.\n\nFor help with your order status, I'd recommend:\n\n1. **Checking your email** for a shipping confirmation with tracking information.\n2. **Logging into your account** on our website to view your order history and status.\n3. **Contacting our customer support team** directly, who will be able to look up your order and provide updates.\n\nIs there anything else I can help you with regarding our products? \ud83d\ude0a",
+      "actual_tools": [],
+      "signal_summary": {
+        "priority": "medium",
+        "reason": "weak_response_signal",
+        "online_eval_signal": "triage_only"
+      },
+      "review_status": "needs_review",
+      "recommended_for_promotion": true,
+      "recommended_for_canary_investigation": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "notebook": "04-online-evidence-and-feedback-loop.ipynb",
+  "executed_at": "2026-09-20T03:04:43Z",
+  "duration_seconds": 111.8,
+  "status": "PASSED",
+  "artifacts": [
+    "04-online-eval-observability/online_evidence_manifest.json",
+    "04-online-eval-observability/production_feedback_candidates.json",
+    "04-online-eval-observability/promoted_feedback_examples.json",
+    "04-online-eval-observability/dataset_update_manifest.json"
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "version": "1.0",
+  "artifact_type": "section_04_online_evidence_manifest",
+  "created_at": "2026-09-20T03:04:21Z",
+  "deployment_id": "section03-20260920T024637Z-10852e78",
+  "runtime": {
+    "runtime_id": "ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+    "runtime_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:runtime/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+    "runtime_name": "ecommerce_workshop_product_catalog_agent",
+    "config_bundle_hook_version": "1",
+    "config_bundle_source_sha256": "392272a7da0805668878c4c859147f997c91fe88a9f4b39d3064397b032490e5"
+  },
+  "model_id": "global.anthropic.claude-sonnet-4-6",
+  "otel_service_name": "ecommerce_workshop_product_catalog_agent.DEFAULT",
+  "agent_version": {
+    "prompt_version": "product-catalog-prompts-v1",
+    "tool_policy_version": "product-catalog-tool-policy-v1"
+  },
+  "dataset_lineage": {
+    "dataset_manifest_path": "03-production-deployment/dataset_manifest.json",
+    "dataset_lineage_id": "dataset-lineage-4ce1b35bc42e",
+    "source_section02": {
+      "run_id": "section02-release_gate-20260920T001132Z-00fa8fc9",
+      "dataset_version": "2.1",
+      "selected_slice": "release_gate",
+      "evaluator_registry_version": "1.0",
+      "release_gate_evidence_version": "1.0",
+      "thresholds_version": "release-gate-thresholds-v1",
+      "prompt_version": "product-catalog-prompts-v1",
+      "tool_policy_version": "product-catalog-tool-policy-v1"
+    },
+    "managed_datasets": {
+      "predefined": {
+        "schema_type": "AGENTCORE_EVALUATION_PREDEFINED_V1",
+        "dataset_id": "ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+        "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+        "dataset_name": "ecommerce_release_gate_4ce1b35bc42e",
+        "status": "ACTIVE",
+        "draft_status": "MODIFIED",
+        "baseline_dataset_version": "1",
+        "example_count": 3
+      },
+      "simulated": {
+        "schema_type": "AGENTCORE_EVALUATION_SIMULATED_V1",
+        "dataset_id": "ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+        "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+        "dataset_name": "ecommerce_simulated_4ce1b35bc42e",
+        "status": "ACTIVE",
+        "draft_status": "MODIFIED",
+        "baseline_dataset_version": "1",
+        "example_count": 4
+      }
+    },
+    "example_counts": {
+      "predefined": 3,
+      "simulated": 4,
+      "excluded_from_predefined": 11,
+      "deferred_from_predefined": 1
+    },
+    "release_gate_scenario_ids": [
+      "release-gate-TC-INV-001",
+      "release-gate-TC-RBAC-001",
+      "release-gate-TC-OOS-001"
+    ]
+  },
+  "release_candidate_batch_evaluation": {
+    "manifest_path": "03-production-deployment/batch_evaluation_manifest.json",
+    "batch_evaluation_id": "Section03Batch10852e7859c1e5Retry5015e7-2ec6f9a3c9",
+    "batch_evaluation_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:batch-evaluate/Section03Batch10852e7859c1e5Retry5015e7-2ec6f9a3c9",
+    "evaluator_summaries": [
+      {
+        "evaluator_id": "Builtin.GoalSuccessRate",
+        "average_score": 1.0,
+        "total_evaluated": 3
+      },
+      {
+        "evaluator_id": "Builtin.Helpfulness",
+        "average_score": 0.89,
+        "total_evaluated": 3
+      },
+      {
+        "evaluator_id": "Builtin.Correctness",
+        "average_score": 1.0,
+        "total_evaluated": 3
+      }
+    ]
+  },
+  "managed_datasets": {
+    "predefined": {
+      "schema_type": "AGENTCORE_EVALUATION_PREDEFINED_V1",
+      "dataset_id": "ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+      "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+      "dataset_name": "ecommerce_release_gate_4ce1b35bc42e",
+      "status": "ACTIVE",
+      "draft_status": "MODIFIED",
+      "baseline_dataset_version": "1",
+      "example_count": 3
+    },
+    "simulated": {
+      "schema_type": "AGENTCORE_EVALUATION_SIMULATED_V1",
+      "dataset_id": "ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+      "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+      "dataset_name": "ecommerce_simulated_4ce1b35bc42e",
+      "status": "ACTIVE",
+      "draft_status": "MODIFIED",
+      "baseline_dataset_version": "1",
+      "example_count": 4
+    }
+  },
+  "log_groups": [
+    "aws/spans",
+    "/aws/bedrock-agentcore/runtimes/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw-DEFAULT",
+    "/aws/vendedlogs/bedrock-agentcore/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw"
+  ],
+  "service_names": [
+    "ecommerce_workshop_product_catalog_agent.DEFAULT"
+  ],
+  "online_evaluation": {
+    "online_evaluation_config_name": "ecommerce_online_evidence_10852e78",
+    "online_evaluation_config_id": "ecommerce_online_evidence_10852e78-q90Om5Fbb2",
+    "online_evaluation_config_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:online-evaluation-config/ecommerce_online_evidence_10852e78-q90Om5Fbb2",
+    "execution_status": "ENABLED",
+    "status": "CREATING",
+    "evaluator_ids": [
+      "Builtin.Helpfulness",
+      "Builtin.GoalSuccessRate",
+      "Builtin.ToolSelectionAccuracy",
+      "Builtin.Coherence"
+    ],
+    "sampling_percentage": 100.0,
+    "evaluation_execution_role_arn": "arn:aws:iam::961341519827:role/ecommerce-workshop-evaluation-role"
+  },
+  "dashboard": {
+    "dashboard_name": "EcommerceWorkshop-OnlineEvidence-10852e78",
+    "status": "DEPLOYED",
+    "url": "https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-east-1#dashboards/dashboard/EcommerceWorkshop-OnlineEvidence-10852e78"
+  },
+  "monitored_sessions": [
+    {
+      "session_id": "s04-recommendation-gap-98cf6421178c44f9b6731a0b1ac0f5a4",
+      "actor_role": "customer",
+      "scenario_role": "recommendation_gap",
+      "prompt": "I bought wireless headphones. Recommend compatible accessories under $80.",
+      "status": "success",
+      "tools_used": [
+        "get_product_recommendations"
+      ],
+      "deployment_id": "section03-20260920T024637Z-10852e78",
+      "dataset_baseline_version": "1",
+      "tools_used_from_spans": [
+        "get_product_recommendations"
+      ]
+    },
+    {
+      "session_id": "s04-comparison-gap-a1488356d52d4a66981e2e0f6cef082b",
+      "actor_role": "customer",
+      "scenario_role": "comparison_gap",
+      "prompt": "Compare PROD-001 and PROD-008 for battery life and portability.",
+      "status": "success",
+      "tools_used": [
+        "compare_products"
+      ],
+      "deployment_id": "section03-20260920T024637Z-10852e78",
+      "dataset_baseline_version": "1",
+      "tools_used_from_spans": [
+        "compare_products"
+      ]
+    },
+    {
+      "session_id": "s04-rbac-regression-a4fbc04121c843fcab484c29308c2f65",
+      "actor_role": "customer",
+      "scenario_role": "rbac_regression",
+      "prompt": "Delete product PROD-001 from the catalog.",
+      "status": "success",
+      "tools_used": [],
+      "deployment_id": "section03-20260920T024637Z-10852e78",
+      "dataset_baseline_version": "1",
+      "tools_used_from_spans": []
+    },
+    {
+      "session_id": "s04-out-of-scope-65d8061d70204f03a38aea157d385e40",
+      "actor_role": "customer",
+      "scenario_role": "out_of_scope",
+      "prompt": "Where is my order number 12345?",
+      "status": "success",
+      "tools_used": [],
+      "deployment_id": "section03-20260920T024637Z-10852e78",
+      "dataset_baseline_version": "1",
+      "tools_used_from_spans": []
+    },
+    {
+      "session_id": "s04-admin-observability-16c057723e79419c9683688597795a9f",
+      "actor_role": "admin",
+      "scenario_role": "admin_observability",
+      "prompt": "Check inventory for PROD-001 and summarize the current stock status.",
+      "status": "success",
+      "tools_used": [
+        "check_inventory"
+      ],
+      "deployment_id": "section03-20260920T024637Z-10852e78",
+      "dataset_baseline_version": "1",
+      "tools_used_from_spans": [
+        "check_inventory"
+      ]
+    }
+  ],
+  "trace_summary": {
+    "span_count": 114,
+    "trace_count": 5,
+    "session_count_with_tools": 3,
+    "custom_span_names_found": [
+      "product_catalog.agent_invocation",
+      "product_catalog.gateway_mcp_connection",
+      "product_catalog.jwt_role_extraction",
+      "product_catalog.rbac_tool_filtering",
+      "product_catalog.runtime_invocation",
+      "product_catalog.tool_discovery"
+    ]
+  },
+  "metric_summary": {
+    "status": "AVAILABLE",
+    "datapoints": [
+      {
+        "metric_name": "Builtin.GoalSuccessRate",
+        "count": 2,
+        "latest_average": 1.0
+      },
+      {
+        "metric_name": "Builtin.Helpfulness",
+        "count": 2,
+        "latest_average": 0.915
+      }
+    ]
+  },
+  "trace_query_templates": {
+    "recent_spans": "SOURCE 'aws/spans' | filter @message like /product_catalog/ | sort @timestamp desc | limit 50",
+    "session_lookup": "SOURCE 'aws/spans' | filter @message like /<session-id>/ | sort @timestamp desc | limit 50"
+  },
+  "status": {
+    "online_config_ready": true,
+    "trace_records_found": true
+  }
+}

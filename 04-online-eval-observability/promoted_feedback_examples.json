@@ -1,0 +1,91 @@
+{
+  "version": "1.0",
+  "artifact_type": "section_04_promoted_feedback_examples",
+  "created_at": "2026-09-20T03:04:21Z",
+  "source_candidate_artifact": "04-online-eval-observability/production_feedback_candidates.json",
+  "promoted_count": 2,
+  "review_decisions": [
+    {
+      "candidate_id": "feedback-1a0b1ac0f5a4",
+      "scenario_id": "prod-feedback-1a0b1ac0f5a4",
+      "decision": "promote_to_dataset_draft",
+      "reviewer": "section04_workshop_review",
+      "rationale": "Synthetic workshop review accepted this trace as regression coverage.",
+      "source_session_id": "s04-recommendation-gap-98cf6421178c44f9b6731a0b1ac0f5a4"
+    },
+    {
+      "candidate_id": "feedback-2e0f6cef082b",
+      "scenario_id": "prod-feedback-2e0f6cef082b",
+      "decision": "promote_to_dataset_draft",
+      "reviewer": "section04_workshop_review",
+      "rationale": "Synthetic workshop review accepted this trace as regression coverage.",
+      "source_session_id": "s04-comparison-gap-a1488356d52d4a66981e2e0f6cef082b"
+    }
+  ],
+  "managed_dataset_examples": [
+    {
+      "scenario_id": "prod-feedback-1a0b1ac0f5a4",
+      "turns": [
+        {
+          "input": "I bought wireless headphones. Recommend compatible accessories under $80.",
+          "expected_response": "The accessory catalog returned limited results for wireless headphone accessories, but here's what's available under $80:\n\n| # | Product | Price | Rating | Description |\n|---|---------|-------|--------|-------------|\n| 1 | **USB-C Hub 7-in-1** (PROD-008) | $49.99 | \u2b50 4.4 | Compact hub with HDMI, SD card reader, USB-A ports & 100W power delivery \u2014 great for charging your headphones and connecting other devices simultaneously. |\n| 2 | **Watch Band - Leather** (PROD-016) | $29.99 | \u2b50 4.3 | Premium leather band for smartwatches \u2014 not directly related to headphones, but a popular accessory pairing. |\n\n---\n\n**My top pick for your headphones:** The **USB-C Hub 7-in-1** at $49.99 is the most relevant \u2014 it lets you charge your wireless headphones via USB-C while keeping all your other devices connected, which is super handy for a clean desk setup.\n\nWould you like to:\n- \ud83d\udce6 **Check stock availabilit"
+        }
+      ],
+      "assertions": [
+        {
+          "text": "prod-feedback-1a0b1ac0f5a4: reviewed production feedback preserves recommendation_gap behavior."
+        },
+        {
+          "text": "prod-feedback-1a0b1ac0f5a4: agent uses observed tool get_product_recommendations."
+        }
+      ],
+      "metadata": {
+        "source": "section_04_production_feedback",
+        "source_candidate_id": "feedback-1a0b1ac0f5a4",
+        "source_session_id": "s04-recommendation-gap-98cf6421178c44f9b6731a0b1ac0f5a4",
+        "source_trace_ids": [],
+        "role": "customer",
+        "category": "recommendation_gap",
+        "reviewer": "section04_workshop_review",
+        "reviewed_at": "2026-09-20T03:04:21Z"
+      },
+      "expected_trajectory": {
+        "toolNames": [
+          "get_product_recommendations"
+        ]
+      }
+    },
+    {
+      "scenario_id": "prod-feedback-2e0f6cef082b",
+      "turns": [
+        {
+          "input": "Compare PROD-001 and PROD-008 for battery life and portability.",
+          "expected_response": "Here's a side-by-side comparison of the two products, with a focus on **battery life** and **portability**:\n\n---\n\n### \ud83d\udd0b Battery Life & \ud83c\udf92 Portability Comparison\n\n| Feature | **PROD-001 \u2013 Wireless Bluetooth Headphones** | **PROD-008 \u2013 USB-C Hub 7-in-1** |\n|---|---|---|\n| **Category** | Audio | Accessories |\n| **Price** | $79.99 | $49.99 |\n| **Rating** | \u2b50 4.5 | \u2b50 4.4 |\n| **In Stock** | \u2705 Yes | \u2705 Yes |\n| **Warranty** | 1 Year Manufacturer | 1 Year |\n\n---\n\n### \ud83d\udcdd Battery Life & Portability Notes\n\nUnfortunately, the detailed spec data (such as specific battery life hours or dimensions/weight) wasn't returned for either product. Here's what we can infer based on product type:\n\n- **Wireless Bluetooth Headphones (PROD-001):** As a wireless audio device, it almost certainly has an internal battery. Typical Bluetooth headphones offer anywhere from 20\u201340 hours of playback, but I'd recommend checking"
+        }
+      ],
+      "assertions": [
+        {
+          "text": "prod-feedback-2e0f6cef082b: reviewed production feedback preserves comparison_gap behavior."
+        },
+        {
+          "text": "prod-feedback-2e0f6cef082b: agent uses observed tool compare_products."
+        }
+      ],
+      "metadata": {
+        "source": "section_04_production_feedback",
+        "source_candidate_id": "feedback-2e0f6cef082b",
+        "source_session_id": "s04-comparison-gap-a1488356d52d4a66981e2e0f6cef082b",
+        "source_trace_ids": [],
+        "role": "customer",
+        "category": "comparison_gap",
+        "reviewer": "section04_workshop_review",
+        "reviewed_at": "2026-09-20T03:04:21Z"
+      },
+      "expected_trajectory": {
+        "toolNames": [
+          "compare_products"
+        ]
+      }
+    }
+  ]
+}

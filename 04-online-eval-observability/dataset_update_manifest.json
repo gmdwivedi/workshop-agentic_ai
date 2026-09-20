@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "artifact_type": "section_04_dataset_update_manifest",
+  "created_at": "2026-09-20T03:04:43Z",
+  "deployment_id": "section03-20260920T024637Z-10852e78",
+  "dataset_lineage_id": "dataset-lineage-4ce1b35bc42e",
+  "managed_dataset": {
+    "schema_type": "AGENTCORE_EVALUATION_PREDEFINED_V1",
+    "dataset_id": "ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+    "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+    "dataset_name": "ecommerce_release_gate_4ce1b35bc42e",
+    "status": "ACTIVE",
+    "draft_status": "MODIFIED",
+    "baseline_dataset_version": "1",
+    "example_count": 3
+  },
+  "previous_latest_version": "1",
+  "updated_dataset_version": "2",
+  "added_example_count": 2,
+  "added_scenario_ids": [
+    "prod-feedback-1a0b1ac0f5a4",
+    "prod-feedback-2e0f6cef082b"
+  ],
+  "source_session_ids": [
+    "s04-recommendation-gap-98cf6421178c44f9b6731a0b1ac0f5a4",
+    "s04-comparison-gap-a1488356d52d4a66981e2e0f6cef082b"
+  ],
+  "add_examples_response": {
+    "datasetId": "ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+    "datasetArn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+    "datasetName": "ecommerce_release_gate_4ce1b35bc42e",
+    "status": "ACTIVE",
+    "draftStatus": "MODIFIED",
+    "exampleCount": 5
+  },
+  "publish_response": {
+    "datasetId": "ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+    "datasetArn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+    "datasetName": "ecommerce_release_gate_4ce1b35bc42e",
+    "status": "ACTIVE",
+    "draftStatus": "UNMODIFIED",
+    "exampleCount": 5
+  },
+  "status": "UPDATED_AND_PUBLISHED"
+}
