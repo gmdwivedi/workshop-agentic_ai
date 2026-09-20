@@ -1,0 +1,754 @@
+{
+  "version": "1.0",
+  "artifact_type": "section_05_optimization_manifest",
+  "created_at": "2026-09-20T03:34:14Z",
+  "deployment_id": "section03-20260920T024637Z-10852e78",
+  "runtime": {
+    "runtime_id": "ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+    "runtime_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:runtime/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+    "runtime_name": "ecommerce_workshop_product_catalog_agent",
+    "config_bundle_hook_version": "1",
+    "config_bundle_source_sha256": "392272a7da0805668878c4c859147f997c91fe88a9f4b39d3064397b032490e5"
+  },
+  "evidence_inputs": {
+    "deployment_manifest": "03-production-deployment/deployment_manifest.json",
+    "dataset_manifest": "03-production-deployment/dataset_manifest.json",
+    "batch_evaluation_manifest": "03-production-deployment/batch_evaluation_manifest.json",
+    "online_evidence_manifest": "04-online-eval-observability/online_evidence_manifest.json",
+    "dataset_update_manifest": "04-online-eval-observability/dataset_update_manifest.json",
+    "production_feedback_candidates": "04-online-eval-observability/production_feedback_candidates.json",
+    "promoted_feedback_examples": "04-online-eval-observability/promoted_feedback_examples.json"
+  },
+  "baseline": {
+    "batch_evaluation_id": "Section03Batch10852e7859c1e5Retry5015e7-2ec6f9a3c9",
+    "batch_evaluation_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:batch-evaluate/Section03Batch10852e7859c1e5Retry5015e7-2ec6f9a3c9",
+    "evaluator_summaries": [
+      {
+        "evaluator_id": "Builtin.GoalSuccessRate",
+        "average_score": 1.0,
+        "total_evaluated": 3
+      },
+      {
+        "evaluator_id": "Builtin.Helpfulness",
+        "average_score": 0.89,
+        "total_evaluated": 3
+      },
+      {
+        "evaluator_id": "Builtin.Correctness",
+        "average_score": 1.0,
+        "total_evaluated": 3
+      }
+    ],
+    "baseline_dataset_version": "1",
+    "updated_dataset_version": "2"
+  },
+  "behavior": {
+    "prompt_version": "product-catalog-prompts-v1",
+    "tool_policy_version": "product-catalog-tool-policy-v1",
+    "tool_catalog_version": "product-catalog-tool-catalog-v1",
+    "tool_count": 11,
+    "source": "section03_runtime_source",
+    "source_files": {
+      "runtime_agent": "03-production-deployment/agents/product_catalog_agent.py",
+      "section01_agent_config": "01-single-agent-prototype/config/agent_config.json",
+      "section01_tool_catalog": "01-single-agent-prototype/config/tool_catalog.json"
+    },
+    "source_hashes": {
+      "runtime_agent": "392272a7da0805668878c4c859147f997c91fe88a9f4b39d3064397b032490e5",
+      "section01_agent_config": "a258b48ba4f392234fa0ef2e28c28db4ee32e3609f8a78cd1b6fead9f516fa41",
+      "section01_tool_catalog": "3a861f8406576dcf6e1d5b6e6eb1e0ad44f2d1945bb0fe8acca4499805bb1161"
+    }
+  },
+  "insights": {
+    "status": "COMPLETED",
+    "requested_insights": [
+      "Builtin.Insight.FailureAnalysis",
+      "Builtin.Insight.UserIntent",
+      "Builtin.Insight.ExecutionSummary"
+    ],
+    "trace_window_source": "section04_monitored_sessions_window",
+    "trace_window": {
+      "start_time": "2026-09-20T02:59:21+00:00",
+      "end_time": "2026-09-20T03:06:21+00:00"
+    },
+    "log_groups": [
+      "/aws/bedrock-agentcore/runtimes/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw-DEFAULT"
+    ],
+    "source_log_groups": [
+      "aws/spans",
+      "/aws/bedrock-agentcore/runtimes/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw-DEFAULT",
+      "/aws/vendedlogs/bedrock-agentcore/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw"
+    ],
+    "service_names": [
+      "ecommerce_workshop_product_catalog_agent.DEFAULT"
+    ],
+    "monitored_session_count": 5,
+    "batch_evaluation_id": "EcommerceOptInsights20f4357a-c48cfeeb2b",
+    "batch_evaluation_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:batch-evaluate/EcommerceOptInsights20f4357a-c48cfeeb2b",
+    "statistics": {},
+    "evaluation_results": {
+      "numberOfSessionsCompleted": 5,
+      "numberOfSessionsInProgress": 0,
+      "numberOfSessionsFailed": 0,
+      "totalNumberOfSessions": 5,
+      "numberOfSessionsIgnored": 0,
+      "evaluatorSummaries": []
+    },
+    "error_details": [],
+    "error_count": 0,
+    "has_failure_analysis": true,
+    "has_user_intent": true,
+    "has_execution_summary": true,
+    "gate": {
+      "status": "PASSED",
+      "required_status": "COMPLETED",
+      "required_outputs": [
+        "has_user_intent",
+        "has_execution_summary"
+      ],
+      "optional_outputs": [
+        "has_failure_analysis"
+      ],
+      "failures": {}
+    }
+  },
+  "recommendations": {
+    "system_prompt": {
+      "status": "COMPLETED",
+      "submitted_prompt_scope": "recommendation_safe_behavior_summary",
+      "prompt_input_mode": "recommendation_safe_summary",
+      "has_candidate": true,
+      "source": "cloudwatch_logs",
+      "service_names": [
+        "ecommerce_workshop_product_catalog_agent.DEFAULT"
+      ],
+      "recommendation_trace_sessions": [
+        {
+          "session_id": "s05-recommendation-admin-60e5223f25ca49c8bb17a508b60cc74b",
+          "actor_role": "admin",
+          "status": "success",
+          "tools_used": [
+            "check_inventory"
+          ]
+        },
+        {
+          "session_id": "s05-recommendation-customer-243b4d5f87734b8c91639fffc9a227a1",
+          "actor_role": "customer",
+          "status": "success",
+          "tools_used": [
+            "get_product_details"
+          ]
+        }
+      ],
+      "trace_visibility": {
+        "status": "VISIBLE",
+        "session_hits": 2,
+        "tool_hits": 2,
+        "messages_seen": 41
+      },
+      "recommendation_id": "EcommerceSpRec20f4357a-5566669DA8",
+      "text_changed": true,
+      "error_code": null
+    },
+    "tool_descriptions": {
+      "status": "COMPLETED",
+      "has_candidate": true,
+      "source": "cloudwatch_logs",
+      "service_names": [
+        "ecommerce_workshop_product_catalog_agent.DEFAULT"
+      ],
+      "tool_name_mode": "gateway_qualified",
+      "submitted_tools": [
+        "ProductTools___check_inventory"
+      ],
+      "recommendation_trace_sessions": [
+        {
+          "session_id": "s05-recommendation-admin-60e5223f25ca49c8bb17a508b60cc74b",
+          "actor_role": "admin",
+          "status": "success",
+          "tools_used": [
+            "check_inventory"
+          ]
+        },
+        {
+          "session_id": "s05-recommendation-customer-243b4d5f87734b8c91639fffc9a227a1",
+          "actor_role": "customer",
+          "status": "success",
+          "tools_used": [
+            "get_product_details"
+          ]
+        }
+      ],
+      "trace_visibility": {
+        "status": "VISIBLE",
+        "session_hits": 2,
+        "tool_hits": 2,
+        "messages_seen": 41
+      },
+      "recommendation_id": "EcommerceTdRec20f4357a-5EEE64FF27",
+      "changed_tool_count": 1,
+      "error_code": null
+    },
+    "feedback_signal_summary": {
+      "promoted_runtime_error_example_count": 0,
+      "promoted_runtime_error_scenario_ids": [],
+      "interpretation": "runtime invocation errors feed target-canary/runtime investigation, not prompt/tool-description optimization proof"
+    },
+    "gate": {
+      "status": "PASSED",
+      "required_recommendations": [
+        "system_prompt",
+        "tool_descriptions"
+      ],
+      "failures": {}
+    }
+  },
+  "config_bundle_readiness": {
+    "supported": true,
+    "source_supported": true,
+    "deployed_supported": true,
+    "deployed_hook_version": "1",
+    "source_hash": "392272a7da0805668878c4c859147f997c91fe88a9f4b39d3064397b032490e5",
+    "deployed_source_hash": "392272a7da0805668878c4c859147f997c91fe88a9f4b39d3064397b032490e5",
+    "source_hash_matches": true,
+    "deployment_has_image_evidence": true,
+    "runtime_agent_path": "03-production-deployment/agents/product_catalog_agent.py",
+    "required_hook": "BedrockAgentCoreContext.get_config_bundle()",
+    "required_deployment_marker": "runtime.config_bundle_hook_version=1",
+    "required_source_hash_marker": "runtime.config_bundle_source_sha256",
+    "required_image_evidence": "image.tag and image.digest",
+    "reason": "deployed runtime reads AgentCore configuration bundles"
+  },
+  "configuration_bundles": {
+    "control": {
+      "bundle_id": "EcommerceControl20f4357a-TlEqnyAF7T",
+      "bundle_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:configuration-bundle/EcommerceControl20f4357a-TlEqnyAF7T",
+      "version_id": "5621178f-dbc3-4b3c-9580-d55954100378",
+      "status": "CREATED"
+    },
+    "treatment": {
+      "bundle_id": "EcommerceTreatment20f4357a-zZ68469REX",
+      "bundle_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:configuration-bundle/EcommerceTreatment20f4357a-zZ68469REX",
+      "version_id": "32052c70-fc4f-46e6-9fba-e724ddfb39e8",
+      "status": "CREATED"
+    }
+  },
+  "experiments": {
+    "config_bundle_ab_test": {
+      "type": "config_bundle_ab_test",
+      "status": "NO_WINNER",
+      "reason": "Live config-bundle A/B traffic was routed through AgentCore Gateway",
+      "gateway": {
+        "gateway_id": "ecommerce-workshop-ab-20f4357a-bv0nbpndcd",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:gateway/ecommerce-workshop-ab-20f4357a-bv0nbpndcd",
+        "gateway_url": "https://ecommerce-workshop-ab-20f4357a-bv0nbpndcd.gateway.bedrock-agentcore.us-east-1.amazonaws.com",
+        "gateway_status": "READY",
+        "target_id": "1KV9TDB2I1",
+        "target_name": "ProductRuntime20f4357a",
+        "target_status": "READY"
+      },
+      "gateway_trace_delivery": {
+        "delivery_source_name": "section05-ab-20f4357a-traces",
+        "gateway_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:gateway/ecommerce-workshop-ab-20f4357a-bv0nbpndcd",
+        "status": "READY",
+        "warnings": [],
+        "xray_destination": "CloudWatchLogs",
+        "delivery_source_status": "READY",
+        "delivery_id": "Ga0TM7pjuE7YJSXR",
+        "delivery_status": "READY"
+      },
+      "online_evaluation_prerequisite": {
+        "online_evaluation_config_id": "ecommerce_online_evidence_10852e78-q90Om5Fbb2",
+        "online_evaluation_config_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:online-evaluation-config/ecommerce_online_evidence_10852e78-q90Om5Fbb2",
+        "status": "ACTIVE",
+        "execution_status": "ENABLED",
+        "failure_reason": null,
+        "log_group_names": [
+          "aws/spans",
+          "/aws/bedrock-agentcore/runtimes/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw-DEFAULT",
+          "/aws/vendedlogs/bedrock-agentcore/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw"
+        ],
+        "service_names": [
+          "ecommerce_workshop_product_catalog_agent.DEFAULT"
+        ],
+        "evaluator_ids": [
+          "Builtin.Helpfulness",
+          "Builtin.GoalSuccessRate",
+          "Builtin.ToolSelectionAccuracy",
+          "Builtin.Coherence"
+        ],
+        "alignment": {
+          "configured_service_names": [
+            "ecommerce_workshop_product_catalog_agent.DEFAULT"
+          ],
+          "configured_log_group_names": [
+            "aws/spans",
+            "/aws/bedrock-agentcore/runtimes/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw-DEFAULT",
+            "/aws/vendedlogs/bedrock-agentcore/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw"
+          ],
+          "required_service_names": [
+            "ecommerce_workshop_product_catalog_agent.DEFAULT"
+          ],
+          "required_log_group_names": [
+            "aws/spans",
+            "/aws/bedrock-agentcore/runtimes/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw-DEFAULT",
+            "/aws/vendedlogs/bedrock-agentcore/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw"
+          ],
+          "missing_service_names": [],
+          "missing_log_group_names": [],
+          "aligned": true
+        },
+        "alignment_updated": false,
+        "source": "section04_prerequisite"
+      },
+      "online_evaluation": {
+        "online_evaluation_config_id": "EcommerceABEval20f4357a-ui9cfMEZBT",
+        "online_evaluation_config_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:online-evaluation-config/EcommerceABEval20f4357a-ui9cfMEZBT",
+        "status": "ACTIVE",
+        "execution_status": "ENABLED",
+        "failure_reason": null,
+        "log_group_names": [
+          "aws/spans",
+          "/aws/bedrock-agentcore/runtimes/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw-DEFAULT",
+          "/aws/vendedlogs/bedrock-agentcore/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw"
+        ],
+        "service_names": [
+          "ecommerce_workshop_product_catalog_agent.DEFAULT"
+        ],
+        "evaluator_ids": [
+          "Builtin.GoalSuccessRate",
+          "Builtin.Helpfulness"
+        ],
+        "source": "section05_ab_specific",
+        "session_timeout_minutes": 1
+      },
+      "ab_running": {
+        "ab_test_id": "ecommercebundleab20f4357a-93e42b0cc7",
+        "ab_test_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:ab-test/ecommercebundleab20f4357a-93e42b0cc7",
+        "status": "ACTIVE",
+        "execution_status": "RUNNING",
+        "current_run_id": "3217605c-890e-4766-8ed2-66f5bfa3cf25",
+        "started_at": "2026-09-20 03:18:23.544000+00:00",
+        "stopped_at": null,
+        "max_duration_expires_at": "2026-10-04 03:18:23.544000+00:00",
+        "error_details": [],
+        "service_error": false,
+        "has_results": false,
+        "analysis_timestamp": null,
+        "metric_count": 0,
+        "evaluator_metrics": [],
+        "derived_decision": "NO_RESULTS",
+        "promotion_candidate": null,
+        "regressions": [],
+        "winners": []
+      },
+      "ab_test": {
+        "ab_test_id": "ecommercebundleab20f4357a-93e42b0cc7",
+        "ab_test_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:ab-test/ecommercebundleab20f4357a-93e42b0cc7",
+        "status": "UPDATING",
+        "execution_status": "RUNNING",
+        "current_run_id": "3217605c-890e-4766-8ed2-66f5bfa3cf25",
+        "started_at": "2026-09-20 03:18:23.544000+00:00",
+        "stopped_at": null,
+        "max_duration_expires_at": "2026-10-04 03:18:23.544000+00:00",
+        "error_details": [],
+        "service_error": false,
+        "has_results": true,
+        "analysis_timestamp": "2026-09-20 03:33:42.457000+00:00",
+        "metric_count": 2,
+        "evaluator_metrics": [
+          {
+            "evaluator_id": "Builtin.GoalSuccessRate",
+            "evaluator_arn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.GoalSuccessRate",
+            "control_stats": {
+              "variantName": "C",
+              "sampleSize": 7,
+              "mean": 1.0
+            },
+            "variant_results": [
+              {
+                "variant_name": "T1",
+                "mean": 1.0,
+                "sample_size": 3,
+                "p_value": null,
+                "is_significant": false,
+                "percent_change": 0.0
+              }
+            ]
+          },
+          {
+            "evaluator_id": "Builtin.Helpfulness",
+            "evaluator_arn": "arn:aws:bedrock-agentcore:::evaluator/Builtin.Helpfulness",
+            "control_stats": {
+              "variantName": "C",
+              "sampleSize": 7,
+              "mean": 1.0
+            },
+            "variant_results": [
+              {
+                "variant_name": "T1",
+                "mean": 1.0,
+                "sample_size": 3,
+                "p_value": null,
+                "is_significant": false,
+                "percent_change": 0.0
+              }
+            ]
+          }
+        ],
+        "derived_decision": "NO_WINNER",
+        "promotion_candidate": null,
+        "regressions": [],
+        "winners": []
+      },
+      "finalization": {
+        "stop_before_decision": true,
+        "stopped_by_notebook": true,
+        "post_stop_polls": 15,
+        "poll_seconds": 60,
+        "initial_execution_status": "RUNNING",
+        "reason": "A/B already had terminal decision evidence",
+        "stop_response": {
+          "ResponseMetadata": {
+            "RequestId": "4ec21975-f081-4106-b4f6-8c26a303bcd3",
+            "HTTPStatusCode": 202,
+            "HTTPHeaders": {
+              "date": "Sun, 20 Sep 2026 03:34:13 GMT",
+              "content-type": "application/json",
+              "content-length": "236",
+              "connection": "keep-alive",
+              "x-amzn-requestid": "4ec21975-f081-4106-b4f6-8c26a303bcd3"
+            },
+            "RetryAttempts": 0
+          },
+          "abTestId": "ecommercebundleab20f4357a-93e42b0cc7",
+          "abTestArn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:ab-test/ecommercebundleab20f4357a-93e42b0cc7",
+          "status": "UPDATING",
+          "executionStatus": "STOPPED",
+          "updatedAt": "2026-09-20 03:34:13.897000+00:00"
+        },
+        "final_execution_status": "RUNNING",
+        "has_results_after_stop": true,
+        "metric_count_after_stop": 2
+      },
+      "traffic": {
+        "invoke_url_path": "/ProductRuntime20f4357a/invocations",
+        "success": 10,
+        "failed": 0,
+        "sessions": [
+          {
+            "session_id": "s05-ab-customer-824dc516b8264e9e844a6ffdc77c4977",
+            "actor_role": "customer",
+            "prompt_name": "details",
+            "status_code": 200,
+            "ok": true,
+            "transport_ok": true,
+            "runtime_status": "success",
+            "role": "customer",
+            "tools_used": [
+              "get_product_details"
+            ],
+            "tools_available": 6,
+            "response_chars": 2059
+          },
+          {
+            "session_id": "s05-ab-customer-66ca75cc74f440a58d416c875b10a69d",
+            "actor_role": "customer",
+            "prompt_name": "compare",
+            "status_code": 200,
+            "ok": true,
+            "transport_ok": true,
+            "runtime_status": "success",
+            "role": "customer",
+            "tools_used": [
+              "compare_products"
+            ],
+            "tools_available": 6,
+            "response_chars": 1453
+          },
+          {
+            "session_id": "s05-ab-customer-661095f4ae354070abb33d258eb4c6d7",
+            "actor_role": "customer",
+            "prompt_name": "return_policy",
+            "status_code": 200,
+            "ok": true,
+            "transport_ok": true,
+            "runtime_status": "success",
+            "role": "customer",
+            "tools_used": [
+              "get_return_policy"
+            ],
+            "tools_available": 6,
+            "response_chars": 1122
+          },
+          {
+            "session_id": "s05-ab-customer-5d9c2f1385814a9287d5a6ad12f582db",
+            "actor_role": "customer",
+            "prompt_name": "recommend",
+            "status_code": 200,
+            "ok": true,
+            "transport_ok": true,
+            "runtime_status": "success",
+            "role": "customer",
+            "tools_used": [
+              "get_product_recommendations"
+            ],
+            "tools_available": 6,
+            "response_chars": 641
+          },
+          {
+            "session_id": "s05-ab-customer-1abe8647518b41b4a59cf20a3e4b5a80",
+            "actor_role": "customer",
+            "prompt_name": "inventory_customer",
+            "status_code": 200,
+            "ok": true,
+            "transport_ok": true,
+            "runtime_status": "success",
+            "role": "customer",
+            "tools_used": [
+              "check_inventory"
+            ],
+            "tools_available": 6,
+            "response_chars": 277
+          },
+          {
+            "session_id": "s05-ab-customer-64ba46b335e14b2591ef85a911b20276",
+            "actor_role": "customer",
+            "prompt_name": "category_search",
+            "status_code": 200,
+            "ok": true,
+            "transport_ok": true,
+            "runtime_status": "success",
+            "role": "customer",
+            "tools_used": [
+              "search_products",
+              "get_product_recommendations"
+            ],
+            "tools_available": 6,
+            "response_chars": 1282
+          },
+          {
+            "session_id": "s05-ab-customer-56bf46acc2cd43458c367414ec741f00",
+            "actor_role": "customer",
+            "prompt_name": "warranty",
+            "status_code": 200,
+            "ok": true,
+            "transport_ok": true,
+            "runtime_status": "success",
+            "role": "customer",
+            "tools_used": [
+              "get_product_details",
+              "get_return_policy"
+            ],
+            "tools_available": 6,
+            "response_chars": 1743
+          },
+          {
+            "session_id": "s05-ab-admin-d36a866d1cb645a8901de01414c3bf14",
+            "actor_role": "admin",
+            "prompt_name": "inventory",
+            "status_code": 200,
+            "ok": true,
+            "transport_ok": true,
+            "runtime_status": "success",
+            "role": "admin",
+            "tools_used": [
+              "check_inventory"
+            ],
+            "tools_available": 11,
+            "response_chars": 897
+          },
+          {
+            "session_id": "s05-ab-admin-1bf859a636134a0087874f8324752709",
+            "actor_role": "admin",
+            "prompt_name": "pricing_read",
+            "status_code": 200,
+            "ok": true,
+            "transport_ok": true,
+            "runtime_status": "success",
+            "role": "admin",
+            "tools_used": [
+              "get_product_details"
+            ],
+            "tools_available": 11,
+            "response_chars": 553
+          },
+          {
+            "session_id": "s05-ab-admin-d39ee57aad8b4d928bda99000275a355",
+            "actor_role": "admin",
+            "prompt_name": "admin_compare",
+            "status_code": 200,
+            "ok": true,
+            "transport_ok": true,
+            "runtime_status": "success",
+            "role": "admin",
+            "tools_used": [
+              "compare_products"
+            ],
+            "tools_available": 11,
+            "response_chars": 1045
+          }
+        ]
+      },
+      "trace_evidence": {
+        "checked_sessions": [
+          {
+            "session_id": "s05-ab-customer-824dc516b8264e9e844a6ffdc77c4977",
+            "trace_id": "6aaf5082477c5805723ba8887e47f03e",
+            "has_model_span": true,
+            "has_agent_span": true,
+            "has_product_gateway_http_span": false,
+            "has_mcp_400": false,
+            "bundle_access_denied": false,
+            "bundle_fetch_seen": true
+          },
+          {
+            "session_id": "s05-ab-customer-66ca75cc74f440a58d416c875b10a69d",
+            "trace_id": "6aaf508d63fe231c406149ab328948bd",
+            "has_model_span": true,
+            "has_agent_span": true,
+            "has_product_gateway_http_span": false,
+            "has_mcp_400": false,
+            "bundle_access_denied": false,
+            "bundle_fetch_seen": true
+          },
+          {
+            "session_id": "s05-ab-customer-661095f4ae354070abb33d258eb4c6d7",
+            "trace_id": "6aaf5099513309ae2c252f6d50f028e3",
+            "has_model_span": true,
+            "has_agent_span": true,
+            "has_product_gateway_http_span": false,
+            "has_mcp_400": false,
+            "bundle_access_denied": false,
+            "bundle_fetch_seen": true
+          },
+          {
+            "session_id": "s05-ab-customer-5d9c2f1385814a9287d5a6ad12f582db",
+            "trace_id": "6aaf50a04d424e4e0f2029480115a25a",
+            "has_model_span": true,
+            "has_agent_span": true,
+            "has_product_gateway_http_span": false,
+            "has_mcp_400": false,
+            "bundle_access_denied": false,
+            "bundle_fetch_seen": true
+          },
+          {
+            "session_id": "s05-ab-customer-1abe8647518b41b4a59cf20a3e4b5a80",
+            "trace_id": "6aaf50a9375e47806de622b678ab7706",
+            "has_model_span": true,
+            "has_agent_span": true,
+            "has_product_gateway_http_span": false,
+            "has_mcp_400": false,
+            "bundle_access_denied": false,
+            "bundle_fetch_seen": true
+          },
+          {
+            "session_id": "s05-ab-customer-64ba46b335e14b2591ef85a911b20276",
+            "trace_id": "6aaf50b02fa0e3b14c6f978b3f45f0eb",
+            "has_model_span": true,
+            "has_agent_span": true,
+            "has_product_gateway_http_span": false,
+            "has_mcp_400": false,
+            "bundle_access_denied": false,
+            "bundle_fetch_seen": true
+          }
+        ],
+        "model_span_sessions": 6,
+        "mcp_http_span_sessions": 0,
+        "mcp_400_sessions": 0,
+        "bundle_access_denied_sessions": 0,
+        "bundle_fetch_sessions": 6,
+        "status": "READY"
+      },
+      "online_evaluation_config_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:online-evaluation-config/EcommerceABEval20f4357a-ui9cfMEZBT",
+      "planned_variants": [
+        {
+          "name": "C",
+          "label": "control",
+          "weight": 50,
+          "bundle_id": "EcommerceControl20f4357a-TlEqnyAF7T",
+          "bundle_version": "5621178f-dbc3-4b3c-9580-d55954100378"
+        },
+        {
+          "name": "T1",
+          "label": "treatment",
+          "weight": 50,
+          "bundle_id": "EcommerceTreatment20f4357a-zZ68469REX",
+          "bundle_version": "32052c70-fc4f-46e6-9fba-e724ddfb39e8"
+        }
+      ],
+      "promotion_allowed": false,
+      "metric_review": {
+        "status": "NO_WINNER",
+        "recommended_release_decision": "continue",
+        "promotion_candidate_ready": false,
+        "promotion_candidate": null,
+        "min_variant_sample_size": 1,
+        "metric_rows": [
+          {
+            "evaluator_id": "Builtin.GoalSuccessRate",
+            "variant_name": "T1",
+            "is_treatment_variant": true,
+            "control_mean": 1.0,
+            "treatment_mean": 1.0,
+            "percent_change": 0.0,
+            "p_value": null,
+            "is_significant": false,
+            "control_sample_size": 7,
+            "treatment_sample_size": 3,
+            "effective_sample_size": 3.0,
+            "meets_min_sample_size": true,
+            "signal": "not_significant"
+          },
+          {
+            "evaluator_id": "Builtin.Helpfulness",
+            "variant_name": "T1",
+            "is_treatment_variant": true,
+            "control_mean": 1.0,
+            "treatment_mean": 1.0,
+            "percent_change": 0.0,
+            "p_value": null,
+            "is_significant": false,
+            "control_sample_size": 7,
+            "treatment_sample_size": 3,
+            "effective_sample_size": 3.0,
+            "meets_min_sample_size": true,
+            "signal": "not_significant"
+          }
+        ],
+        "decision_rules": [
+          "Do not promote when the A/B service reports errors.",
+          "Do not promote until evaluator metrics and an analysis timestamp are present.",
+          "Do not promote when treatment sample size is below the configured minimum.",
+          "Do not promote when any treatment evaluator shows a significant regression.",
+          "Promote only after a significant treatment improvement and explicit operator approval."
+        ],
+        "rationale": "Evaluator metrics are present, but the treatment did not produce a significant win.",
+        "next_action": "Continue collecting traffic or revise the treatment candidate.",
+        "regressions": [],
+        "improvements": [],
+        "low_sample_rows": []
+      },
+      "operator_decision": "continue"
+    },
+    "target_based_canary": {
+      "type": "target_based_canary",
+      "status": "DRY_RUN_NO_CANDIDATE_RUNTIME",
+      "reason": "No v2 runtime or Gateway target candidate was produced in this workshop run",
+      "traffic_policy": {
+        "control": 90,
+        "treatment": 10
+      },
+      "baseline_runtime": {
+        "runtime_id": "ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+        "runtime_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:runtime/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+        "runtime_name": "ecommerce_workshop_product_catalog_agent",
+        "config_bundle_hook_version": "1",
+        "config_bundle_source_sha256": "392272a7da0805668878c4c859147f997c91fe88a9f4b39d3064397b032490e5"
+      },
+      "candidate_runtime": {},
+      "ci_preproduction_gate": {},
+      "promotion_allowed": false
+    }
+  }
+}

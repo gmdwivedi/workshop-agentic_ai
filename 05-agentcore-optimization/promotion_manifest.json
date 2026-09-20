@@ -1,0 +1,137 @@
+{
+  "version": "1.0",
+  "artifact_type": "section_05_promotion_manifest",
+  "created_at": "2026-09-20T03:34:14Z",
+  "deployment_id": "section03-20260920T024637Z-10852e78",
+  "status": "SKIPPED_NO_PROMOTION",
+  "promotion_executed": false,
+  "execution_mode": "not_requested",
+  "execution_result": {},
+  "selected_variant": {
+    "candidate": "treatment",
+    "config_bundle": {
+      "bundle_id": "EcommerceTreatment20f4357a-zZ68469REX",
+      "bundle_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:configuration-bundle/EcommerceTreatment20f4357a-zZ68469REX",
+      "version_id": "32052c70-fc4f-46e6-9fba-e724ddfb39e8",
+      "status": "CREATED"
+    },
+    "experiment_status": "NO_WINNER",
+    "metric_review": {
+      "status": "NO_WINNER",
+      "recommended_release_decision": "continue",
+      "promotion_candidate_ready": false,
+      "promotion_candidate": null,
+      "min_variant_sample_size": 1,
+      "metric_rows": [
+        {
+          "evaluator_id": "Builtin.GoalSuccessRate",
+          "variant_name": "T1",
+          "is_treatment_variant": true,
+          "control_mean": 1.0,
+          "treatment_mean": 1.0,
+          "percent_change": 0.0,
+          "p_value": null,
+          "is_significant": false,
+          "control_sample_size": 7,
+          "treatment_sample_size": 3,
+          "effective_sample_size": 3.0,
+          "meets_min_sample_size": true,
+          "signal": "not_significant"
+        },
+        {
+          "evaluator_id": "Builtin.Helpfulness",
+          "variant_name": "T1",
+          "is_treatment_variant": true,
+          "control_mean": 1.0,
+          "treatment_mean": 1.0,
+          "percent_change": 0.0,
+          "p_value": null,
+          "is_significant": false,
+          "control_sample_size": 7,
+          "treatment_sample_size": 3,
+          "effective_sample_size": 3.0,
+          "meets_min_sample_size": true,
+          "signal": "not_significant"
+        }
+      ],
+      "decision_rules": [
+        "Do not promote when the A/B service reports errors.",
+        "Do not promote until evaluator metrics and an analysis timestamp are present.",
+        "Do not promote when treatment sample size is below the configured minimum.",
+        "Do not promote when any treatment evaluator shows a significant regression.",
+        "Promote only after a significant treatment improvement and explicit operator approval."
+      ],
+      "rationale": "Evaluator metrics are present, but the treatment did not produce a significant win.",
+      "next_action": "Continue collecting traffic or revise the treatment candidate.",
+      "regressions": [],
+      "improvements": [],
+      "low_sample_rows": []
+    }
+  },
+  "active_runtime": {
+    "runtime_id": "ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+    "runtime_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:runtime/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+    "runtime_name": "ecommerce_workshop_product_catalog_agent",
+    "config_bundle_hook_version": "1",
+    "config_bundle_source_sha256": "392272a7da0805668878c4c859147f997c91fe88a9f4b39d3064397b032490e5"
+  },
+  "rollback_target": {
+    "runtime": {
+      "runtime_id": "ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+      "runtime_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:runtime/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+      "runtime_name": "ecommerce_workshop_product_catalog_agent",
+      "config_bundle_hook_version": "1",
+      "config_bundle_source_sha256": "392272a7da0805668878c4c859147f997c91fe88a9f4b39d3064397b032490e5"
+    },
+    "image": {
+      "repository": "ecommerce-workshop-product-catalog-agent",
+      "tag": "rc-10852e78",
+      "image_uri": "961341519827.dkr.ecr.us-east-1.amazonaws.com/ecommerce-workshop-product-catalog-agent:rc-10852e78",
+      "latest_uri": "961341519827.dkr.ecr.us-east-1.amazonaws.com/ecommerce-workshop-product-catalog-agent:latest",
+      "digest": "sha256:0065fc11905d0a3a3a6c9f5c4ee616da10b34b6bedb5da03979e99e40c8016b2",
+      "digest_source": "ecr.describe_images"
+    },
+    "batch_evaluation": {
+      "batch_evaluation_id": "Section03Batch10852e7859c1e5Retry5015e7-2ec6f9a3c9",
+      "batch_evaluation_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:batch-evaluate/Section03Batch10852e7859c1e5Retry5015e7-2ec6f9a3c9",
+      "batch_evaluation_name": "Section03Batch10852e7859c1e5Retry5015e7",
+      "status": "COMPLETED",
+      "created_at": "2026-09-20 02:56:56.372203+00:00",
+      "updated_at": "2026-09-20 02:57:59.778589+00:00",
+      "error_details": [],
+      "agent_invocation_failures": [],
+      "output_data_config": {
+        "log_group_name": "/aws/bedrock-agentcore/evaluations/batch-evaluations/results/default",
+        "log_stream_name": "run-Section03Batch10852e7859c1e5Retry5015e7-2ec6f9a3c9"
+      },
+      "sessions": {
+        "completed": 3,
+        "failed": 0,
+        "ignored": 0,
+        "in_progress": 0,
+        "total": 3
+      },
+      "evaluator_summaries": [
+        {
+          "evaluator_id": "Builtin.GoalSuccessRate",
+          "average_score": 1.0,
+          "total_evaluated": 3
+        },
+        {
+          "evaluator_id": "Builtin.Helpfulness",
+          "average_score": 0.89,
+          "total_evaluated": 3
+        },
+        {
+          "evaluator_id": "Builtin.Correctness",
+          "average_score": 1.0,
+          "total_evaluated": 3
+        }
+      ]
+    }
+  },
+  "monitoring_handoff": {
+    "next_section": "04-online-eval-observability",
+    "reason": "post-promotion monitoring and feedback mining return to Section 04"
+  }
+}
