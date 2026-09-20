@@ -1,0 +1,283 @@
+{
+  "version": "1.0",
+  "artifact_type": "section_03_deployment_manifest",
+  "deployment_id": "section03-20260920T024637Z-10852e78",
+  "created_at": "2026-09-20T02:58:27Z",
+  "region": "us-east-1",
+  "account_id": "961341519827",
+  "runtime": {
+    "runtime_id": "ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+    "runtime_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:runtime/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+    "runtime_name": "ecommerce_workshop_product_catalog_agent",
+    "config_bundle_hook_version": "1",
+    "config_bundle_source_sha256": "392272a7da0805668878c4c859147f997c91fe88a9f4b39d3064397b032490e5"
+  },
+  "gateway": {
+    "gateway_id": "ecommerce-workshop-product-gateway-dco1g3u3zo",
+    "gateway_url": "https://ecommerce-workshop-product-gateway-dco1g3u3zo.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp",
+    "gateway_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:gateway/ecommerce-workshop-product-gateway-dco1g3u3zo"
+  },
+  "cognito": {
+    "user_pool_id": "us-east-1_HiCFxsrHm",
+    "user_client_id": "3arltkv5cl754gfm7qfmqjk3e5"
+  },
+  "image": {
+    "repository": "ecommerce-workshop-product-catalog-agent",
+    "tag": "rc-10852e78",
+    "image_uri": "961341519827.dkr.ecr.us-east-1.amazonaws.com/ecommerce-workshop-product-catalog-agent:rc-10852e78",
+    "latest_uri": "961341519827.dkr.ecr.us-east-1.amazonaws.com/ecommerce-workshop-product-catalog-agent:latest",
+    "digest": "sha256:0065fc11905d0a3a3a6c9f5c4ee616da10b34b6bedb5da03979e99e40c8016b2",
+    "digest_source": "ecr.describe_images"
+  },
+  "model_id": "global.anthropic.claude-sonnet-4-6",
+  "otel_service_name": "ecommerce_workshop_product_catalog_agent.DEFAULT",
+  "dataset_lineage": {
+    "dataset_manifest_path": "03-production-deployment/dataset_manifest.json",
+    "dataset_lineage_id": "dataset-lineage-4ce1b35bc42e",
+    "source_section02": {
+      "run_id": "section02-release_gate-20260920T001132Z-00fa8fc9",
+      "dataset_version": "2.1",
+      "selected_slice": "release_gate",
+      "evaluator_registry_version": "1.0",
+      "release_gate_evidence_version": "1.0",
+      "thresholds_version": "release-gate-thresholds-v1",
+      "prompt_version": "product-catalog-prompts-v1",
+      "tool_policy_version": "product-catalog-tool-policy-v1"
+    },
+    "managed_datasets": {
+      "predefined": {
+        "schema_type": "AGENTCORE_EVALUATION_PREDEFINED_V1",
+        "dataset_id": "ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+        "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+        "dataset_name": "ecommerce_release_gate_4ce1b35bc42e",
+        "status": "ACTIVE",
+        "draft_status": "MODIFIED",
+        "baseline_dataset_version": "1",
+        "example_count": 3
+      },
+      "simulated": {
+        "schema_type": "AGENTCORE_EVALUATION_SIMULATED_V1",
+        "dataset_id": "ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+        "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+        "dataset_name": "ecommerce_simulated_4ce1b35bc42e",
+        "status": "ACTIVE",
+        "draft_status": "MODIFIED",
+        "baseline_dataset_version": "1",
+        "example_count": 4
+      }
+    },
+    "example_counts": {
+      "predefined": 3,
+      "simulated": 4,
+      "excluded_from_predefined": 11,
+      "deferred_from_predefined": 1
+    },
+    "release_gate_scenario_ids": [
+      "release-gate-TC-INV-001",
+      "release-gate-TC-RBAC-001",
+      "release-gate-TC-OOS-001"
+    ]
+  },
+  "section02_quality_contract": {
+    "run_id": "section02-release_gate-20260920T001132Z-00fa8fc9",
+    "dataset_version": "2.1",
+    "selected_slice": "release_gate",
+    "evaluator_registry_version": "1.0",
+    "release_gate_evidence_version": "1.0",
+    "thresholds_version": "release-gate-thresholds-v1",
+    "prompt_version": "product-catalog-prompts-v1",
+    "tool_policy_version": "product-catalog-tool-policy-v1"
+  },
+  "agent_behavior": {
+    "prompt_version": "product-catalog-prompts-v1",
+    "tool_policy_version": "product-catalog-tool-policy-v1"
+  },
+  "observability": {
+    "log_delivery": {
+      "log_group": "/aws/vendedlogs/bedrock-agentcore/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+      "logs_source": "product-rT5pK6HWMw-logs-src",
+      "logs_destination": "product-rT5pK6HWMw-logs-dst",
+      "traces_source": "product-rT5pK6HWMw-trace-src",
+      "traces_destination": "product-rT5pK6HWMw-trace-dst"
+    },
+    "data_protection": {
+      "requested": false,
+      "status": "SKIPPED",
+      "target_log_groups": [
+        "/aws/vendedlogs/bedrock-agentcore/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw",
+        "/aws/bedrock-agentcore/runtimes/ecommerce_workshop_product_catalog_agent-rT5pK6HWMw-DEFAULT"
+      ]
+    },
+    "total_observability_events": 97,
+    "custom_spans_expected": [
+      "product_catalog.agent_invocation",
+      "product_catalog.gateway_mcp_connection",
+      "product_catalog.jwt_role_extraction",
+      "product_catalog.rbac_tool_filtering",
+      "product_catalog.runtime_invocation",
+      "product_catalog.tool_discovery"
+    ]
+  },
+  "postdeploy_quality_gate": {
+    "status": "PASSED",
+    "scores": [
+      {
+        "scenario_id": "release-gate-TC-INV-001",
+        "evaluator_id": "Builtin.Correctness",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASS"
+      },
+      {
+        "scenario_id": "release-gate-TC-INV-001",
+        "evaluator_id": "Builtin.GoalSuccessRate",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASS"
+      },
+      {
+        "scenario_id": "release-gate-TC-INV-001",
+        "evaluator_id": "Builtin.Helpfulness",
+        "score": 1.0,
+        "threshold": 0.65,
+        "status": "PASS"
+      },
+      {
+        "scenario_id": "release-gate-TC-INV-001",
+        "evaluator_id": "Builtin.TrajectoryAnyOrderMatch",
+        "score": 1.0,
+        "threshold": 1.0,
+        "status": "PASS"
+      },
+      {
+        "scenario_id": "release-gate-TC-RBAC-001",
+        "evaluator_id": "Builtin.Correctness",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASS"
+      },
+      {
+        "scenario_id": "release-gate-TC-RBAC-001",
+        "evaluator_id": "Builtin.GoalSuccessRate",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASS"
+      },
+      {
+        "scenario_id": "release-gate-TC-RBAC-001",
+        "evaluator_id": "Builtin.Helpfulness",
+        "score": 0.67,
+        "threshold": 0.65,
+        "status": "PASS"
+      },
+      {
+        "scenario_id": "release-gate-TC-OOS-001",
+        "evaluator_id": "Builtin.Correctness",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASS"
+      },
+      {
+        "scenario_id": "release-gate-TC-OOS-001",
+        "evaluator_id": "Builtin.GoalSuccessRate",
+        "score": 1.0,
+        "threshold": 0.7,
+        "status": "PASS"
+      },
+      {
+        "scenario_id": "release-gate-TC-OOS-001",
+        "evaluator_id": "Builtin.Helpfulness",
+        "score": 1.0,
+        "threshold": 0.65,
+        "status": "PASS"
+      }
+    ],
+    "failure_reasons": [],
+    "pending_reasons": [],
+    "total_observability_events": 97
+  },
+  "batch_evaluation": {
+    "version": "1.0",
+    "artifact_type": "section_03_batch_evaluation_manifest",
+    "created_at": "2026-09-20T02:58:27Z",
+    "deployment_id": "section03-20260920T024637Z-10852e78",
+    "dataset_lineage_id": "dataset-lineage-4ce1b35bc42e",
+    "managed_datasets": {
+      "predefined": {
+        "schema_type": "AGENTCORE_EVALUATION_PREDEFINED_V1",
+        "dataset_id": "ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+        "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+        "dataset_name": "ecommerce_release_gate_4ce1b35bc42e",
+        "status": "ACTIVE",
+        "draft_status": "MODIFIED",
+        "baseline_dataset_version": "1",
+        "example_count": 3
+      },
+      "simulated": {
+        "schema_type": "AGENTCORE_EVALUATION_SIMULATED_V1",
+        "dataset_id": "ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+        "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+        "dataset_name": "ecommerce_simulated_4ce1b35bc42e",
+        "status": "ACTIVE",
+        "draft_status": "MODIFIED",
+        "baseline_dataset_version": "1",
+        "example_count": 4
+      }
+    },
+    "source_section02": {
+      "run_id": "section02-release_gate-20260920T001132Z-00fa8fc9",
+      "dataset_version": "2.1",
+      "selected_slice": "release_gate",
+      "evaluator_registry_version": "1.0",
+      "release_gate_evidence_version": "1.0",
+      "thresholds_version": "release-gate-thresholds-v1",
+      "prompt_version": "product-catalog-prompts-v1",
+      "tool_policy_version": "product-catalog-tool-policy-v1"
+    },
+    "scenario_count": 3,
+    "evaluator_ids": [
+      "Builtin.Correctness",
+      "Builtin.GoalSuccessRate",
+      "Builtin.Helpfulness"
+    ],
+    "batch_evaluation": {
+      "batch_evaluation_id": "Section03Batch10852e7859c1e5Retry5015e7-2ec6f9a3c9",
+      "batch_evaluation_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:batch-evaluate/Section03Batch10852e7859c1e5Retry5015e7-2ec6f9a3c9",
+      "batch_evaluation_name": "Section03Batch10852e7859c1e5Retry5015e7",
+      "status": "COMPLETED",
+      "created_at": "2026-09-20 02:56:56.372203+00:00",
+      "updated_at": "2026-09-20 02:57:59.778589+00:00",
+      "error_details": [],
+      "agent_invocation_failures": [],
+      "output_data_config": {
+        "log_group_name": "/aws/bedrock-agentcore/evaluations/batch-evaluations/results/default",
+        "log_stream_name": "run-Section03Batch10852e7859c1e5Retry5015e7-2ec6f9a3c9"
+      },
+      "sessions": {
+        "completed": 3,
+        "failed": 0,
+        "ignored": 0,
+        "in_progress": 0,
+        "total": 3
+      },
+      "evaluator_summaries": [
+        {
+          "evaluator_id": "Builtin.GoalSuccessRate",
+          "average_score": 1.0,
+          "total_evaluated": 3
+        },
+        {
+          "evaluator_id": "Builtin.Helpfulness",
+          "average_score": 0.89,
+          "total_evaluated": 3
+        },
+        {
+          "evaluator_id": "Builtin.Correctness",
+          "average_score": 1.0,
+          "total_evaluated": 3
+        }
+      ]
+    },
+    "batch_events_count": 9
+  }
+}
