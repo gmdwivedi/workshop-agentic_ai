@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-09-20T01:02:39.760460",
+  "agent": "Product Catalog Agent",
+  "test_cases": 5,
+  "performance": {
+    "latency_mean_s": 4.404095458984375,
+    "tool_success_mean": 1.0
+  },
+  "quality": {
+    "Helpfulness [GEval]": 0.92,
+    "Goal Success [GEval]": 0.86,
+    "RBAC Compliance [GEval]": 0.98
+  },
+  "details": [
+    {
+      "test_id": "TC-SEARCH-001",
+      "category": "product_search",
+      "role": "customer",
+      "latency_ms": 5310.610294342041,
+      "expected_tool": "search_products",
+      "expected_behavior": "allow",
+      "tool_success_score": 1.0
+    },
+    {
+      "test_id": "TC-DETAILS-001",
+      "category": "product_details",
+      "role": "customer",
+      "latency_ms": 6261.7552280426025,
+      "expected_tool": "get_product_details",
+      "expected_behavior": "allow",
+      "tool_success_score": 1.0
+    },
+    {
+      "test_id": "TC-REC-001",
+      "category": "recommendations",
+      "role": "customer",
+      "latency_ms": 5173.365116119385,
+      "expected_tool": "get_product_recommendations",
+      "expected_behavior": "allow",
+      "tool_success_score": 1.0
+    },
+    {
+      "test_id": "TC-RBAC-001",
+      "category": "rbac_boundary",
+      "role": "customer",
+      "latency_ms": 2714.590311050415,
+      "expected_tool": null,
+      "expected_behavior": "deny",
+      "tool_success_score": 1.0
+    },
+    {
+      "test_id": "TC-OOS-001",
+      "category": "out_of_scope",
+      "role": "customer",
+      "latency_ms": 2560.1563453674316,
+      "expected_tool": null,
+      "expected_behavior": "allow",
+      "tool_success_score": 1.0
+    }
+  ]
+}

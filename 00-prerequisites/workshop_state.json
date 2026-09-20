@@ -1,0 +1,345 @@
+{
+  "advanced_capability_checks": {
+    "last_checked_at": "2026-09-19T18:47:24Z",
+    "results": {
+      "agentcore_evaluations": {
+        "details": {
+          "method": "list_online_evaluation_configs"
+        },
+        "message": "list_online_evaluation_configs API is reachable",
+        "name": "AgentCore Evaluations",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "agentcore_gateway": {
+        "details": {
+          "method": "list_gateways"
+        },
+        "message": "list_gateways API is reachable",
+        "name": "AgentCore Gateway",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "agentcore_optimization": {
+        "details": {
+          "checked_methods": [
+            "list_optimization_jobs",
+            "list_optimizations"
+          ]
+        },
+        "message": "Installed boto3/botocore does not expose a read API for this capability",
+        "name": "AgentCore Optimization",
+        "ok": false,
+        "required": false,
+        "status": "warning"
+      },
+      "agentcore_runtime": {
+        "details": {
+          "method": "list_agent_runtimes"
+        },
+        "message": "list_agent_runtimes API is reachable",
+        "name": "AgentCore Runtime",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "cloudwatch_logs": {
+        "details": {
+          "method": "describe_log_groups"
+        },
+        "message": "describe_log_groups API is reachable",
+        "name": "CloudWatch Logs",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "iam": {
+        "details": {
+          "method": "get_account_summary"
+        },
+        "message": "get_account_summary API is reachable",
+        "name": "IAM",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "managed_datasets": {
+        "details": {
+          "method": "list_datasets"
+        },
+        "message": "list_datasets API is reachable",
+        "name": "Managed Datasets",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "s3": {
+        "details": {
+          "method": "list_buckets"
+        },
+        "message": "list_buckets API is reachable",
+        "name": "S3",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      }
+    },
+    "summary": {
+      "failed": 0,
+      "passed": 7,
+      "required": false,
+      "total": 8,
+      "warnings": 1
+    }
+  },
+  "created_at": "2026-09-19T18:47:23Z",
+  "downstream_manifests": {
+    "dataset": {
+      "exists": false,
+      "path": "03-production-deployment/dataset_manifest.json"
+    },
+    "dataset_update": {
+      "exists": false,
+      "path": "04-online-eval-observability/dataset_update_manifest.json"
+    },
+    "deployment": {
+      "exists": false,
+      "path": "03-production-deployment/deployment_manifest.json"
+    },
+    "online_evidence": {
+      "exists": false,
+      "path": "04-online-eval-observability/online_evidence_manifest.json"
+    },
+    "optimization": {
+      "exists": false,
+      "path": "05-agentcore-optimization/optimization_manifest.json"
+    },
+    "promotion": {
+      "exists": false,
+      "path": "05-agentcore-optimization/promotion_manifest.json"
+    },
+    "release_decision": {
+      "exists": false,
+      "path": "05-agentcore-optimization/release_decision_report.json"
+    }
+  },
+  "resources": {
+    "agentcore": {
+      "evaluations": {},
+      "gateway": {},
+      "managed_datasets": {},
+      "optimization": {},
+      "runtime": {}
+    },
+    "cloudwatch_log_groups": {},
+    "dynamodb_tables": {
+      "accounts": {
+        "arn": "arn:aws:dynamodb:us-east-1:961341519827:table/ecommerce-workshop-accounts",
+        "logical_name": "accounts",
+        "module": "00-prerequisites",
+        "name": "ecommerce-workshop-accounts",
+        "service": "dynamodb",
+        "status": "created_or_reused"
+      },
+      "orders": {
+        "arn": "arn:aws:dynamodb:us-east-1:961341519827:table/ecommerce-workshop-orders",
+        "logical_name": "orders",
+        "module": "00-prerequisites",
+        "name": "ecommerce-workshop-orders",
+        "service": "dynamodb",
+        "status": "created_or_reused"
+      },
+      "products": {
+        "arn": "arn:aws:dynamodb:us-east-1:961341519827:table/ecommerce-workshop-products",
+        "logical_name": "products",
+        "module": "00-prerequisites",
+        "name": "ecommerce-workshop-products",
+        "service": "dynamodb",
+        "status": "created_or_reused"
+      }
+    },
+    "iam_roles": {},
+    "s3_buckets": {},
+    "ssm_parameters": {
+      "accounts_table": {
+        "arn": "arn:aws:ssm:us-east-1:961341519827:parameter/ecommerce-workshop-accounts-table",
+        "logical_name": "accounts_table",
+        "module": "00-prerequisites",
+        "name": "ecommerce-workshop-accounts-table",
+        "service": "ssm",
+        "status": "created_or_updated",
+        "value": "ecommerce-workshop-accounts"
+      },
+      "orders_table": {
+        "arn": "arn:aws:ssm:us-east-1:961341519827:parameter/ecommerce-workshop-orders-table",
+        "logical_name": "orders_table",
+        "module": "00-prerequisites",
+        "name": "ecommerce-workshop-orders-table",
+        "service": "ssm",
+        "status": "created_or_updated",
+        "value": "ecommerce-workshop-orders"
+      },
+      "products_table": {
+        "arn": "arn:aws:ssm:us-east-1:961341519827:parameter/ecommerce-workshop-products-table",
+        "logical_name": "products_table",
+        "module": "00-prerequisites",
+        "name": "ecommerce-workshop-products-table",
+        "service": "ssm",
+        "status": "created_or_updated",
+        "value": "ecommerce-workshop-products"
+      }
+    }
+  },
+  "schema_version": "1.0",
+  "updated_at": "2026-09-19T18:47:24Z",
+  "verification": {
+    "advanced_checks": {
+      "agentcore_evaluations": {
+        "details": {
+          "method": "list_online_evaluation_configs"
+        },
+        "message": "list_online_evaluation_configs API is reachable",
+        "name": "AgentCore Evaluations",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "agentcore_gateway": {
+        "details": {
+          "method": "list_gateways"
+        },
+        "message": "list_gateways API is reachable",
+        "name": "AgentCore Gateway",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "agentcore_optimization": {
+        "details": {
+          "checked_methods": [
+            "list_optimization_jobs",
+            "list_optimizations"
+          ]
+        },
+        "message": "Installed boto3/botocore does not expose a read API for this capability",
+        "name": "AgentCore Optimization",
+        "ok": false,
+        "required": false,
+        "status": "warning"
+      },
+      "agentcore_runtime": {
+        "details": {
+          "method": "list_agent_runtimes"
+        },
+        "message": "list_agent_runtimes API is reachable",
+        "name": "AgentCore Runtime",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "cloudwatch_logs": {
+        "details": {
+          "method": "describe_log_groups"
+        },
+        "message": "describe_log_groups API is reachable",
+        "name": "CloudWatch Logs",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "iam": {
+        "details": {
+          "method": "get_account_summary"
+        },
+        "message": "get_account_summary API is reachable",
+        "name": "IAM",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "managed_datasets": {
+        "details": {
+          "method": "list_datasets"
+        },
+        "message": "list_datasets API is reachable",
+        "name": "Managed Datasets",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      },
+      "s3": {
+        "details": {
+          "method": "list_buckets"
+        },
+        "message": "list_buckets API is reachable",
+        "name": "S3",
+        "ok": true,
+        "required": false,
+        "status": "passed"
+      }
+    },
+    "last_checked_at": "2026-09-19T18:47:24Z",
+    "required_checks": {
+      "aws_identity": {
+        "ok": true,
+        "result": {
+          "account": "961341519827",
+          "identity": "arn:aws:sts::961341519827:assumed-role/code-editor-CodeEditorInstanceBootstrapRole-sa0GjfqfWXC5/i-0b59280f70178b456"
+        }
+      },
+      "bedrock_models": {
+        "ok": true,
+        "results": {
+          "anthropic.claude-sonnet-4-6": {
+            "accessible": true
+          }
+        },
+        "warning_only": true
+      },
+      "dynamodb_tables": {
+        "ok": true,
+        "results": {
+          "ecommerce-workshop-accounts": {
+            "exists": true,
+            "item_count": 8,
+            "status": "ACTIVE"
+          },
+          "ecommerce-workshop-orders": {
+            "exists": true,
+            "item_count": 10,
+            "status": "ACTIVE"
+          },
+          "ecommerce-workshop-products": {
+            "exists": true,
+            "item_count": 11,
+            "status": "ACTIVE"
+          }
+        }
+      },
+      "ssm_parameters": {
+        "ok": true,
+        "results": {
+          "ecommerce-workshop-accounts-table": {
+            "exists": true,
+            "value": "ecommerce-workshop-accounts"
+          },
+          "ecommerce-workshop-orders-table": {
+            "exists": true,
+            "value": "ecommerce-workshop-orders"
+          },
+          "ecommerce-workshop-products-table": {
+            "exists": true,
+            "value": "ecommerce-workshop-products"
+          }
+        }
+      }
+    }
+  },
+  "workshop": {
+    "account_id": "961341519827",
+    "prefix": "ecommerce-workshop",
+    "region": "us-east-1"
+  }
+}

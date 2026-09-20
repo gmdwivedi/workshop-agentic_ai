@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "section_02_local_evaluation_run_manifest",
+  "run_id": "section02-release_gate-20260920T001132Z-00fa8fc9",
+  "timestamp": "2026-09-20T00:11:32Z",
+  "module": "02-evaluation-baseline",
+  "framework": "strands-evals",
+  "region": "us-east-1",
+  "dataset_version": "2.1",
+  "selected_slice": "release_gate",
+  "selected_test_case_ids": [
+    "TC-SEARCH-001",
+    "TC-DETAILS-001",
+    "TC-INV-001",
+    "TC-REC-001",
+    "TC-COMP-001",
+    "TC-POLICY-001",
+    "TC-ADMIN-001",
+    "TC-ADMIN-007",
+    "TC-RBAC-001",
+    "TC-RBAC-006",
+    "TC-RBAC-007",
+    "TC-ADV-001",
+    "TC-ADV-005",
+    "TC-OOS-001",
+    "TC-MULTI-001"
+  ],
+  "agent": {
+    "name": "ProductCatalogAgent",
+    "version": "local-rbac-v1",
+    "model_id": "global.anthropic.claude-sonnet-4-6",
+    "prompt_version": "product-catalog-prompts-v1",
+    "tool_policy_version": "product-catalog-tool-policy-v1",
+    "tool_catalog_version": "product-catalog-tool-catalog-v1"
+  },
+  "judge_model_id": "global.anthropic.claude-sonnet-4-6",
+  "evaluator_registry_version": "1.0",
+  "thresholds_version": "release-gate-thresholds-v1",
+  "notes": [
+    "Local/offline Section 02 evidence only.",
+    "No cloud dataset construction in this section."
+  ]
+}
