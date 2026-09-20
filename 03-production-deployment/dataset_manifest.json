@@ -1,0 +1,164 @@
+{
+  "version": "1.0",
+  "artifact_type": "section_03_dataset_manifest",
+  "dataset_lineage_id": "dataset-lineage-4ce1b35bc42e",
+  "created_at": "2026-09-20T01:16:07Z",
+  "region": "us-east-1",
+  "account_id": "961341519827",
+  "source_section02": {
+    "run_id": "section02-release_gate-20260920T001132Z-00fa8fc9",
+    "dataset_version": "2.1",
+    "selected_slice": "release_gate",
+    "evaluator_registry_version": "1.0",
+    "release_gate_evidence_version": "1.0",
+    "thresholds_version": "release-gate-thresholds-v1",
+    "prompt_version": "product-catalog-prompts-v1",
+    "tool_policy_version": "product-catalog-tool-policy-v1"
+  },
+  "schemas": {
+    "predefined": "AGENTCORE_EVALUATION_PREDEFINED_V1",
+    "simulated": "AGENTCORE_EVALUATION_SIMULATED_V1"
+  },
+  "managed_datasets": {
+    "predefined": {
+      "schema_type": "AGENTCORE_EVALUATION_PREDEFINED_V1",
+      "dataset_id": "ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+      "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+      "dataset_name": "ecommerce_release_gate_4ce1b35bc42e",
+      "status": "ACTIVE",
+      "draft_status": "MODIFIED",
+      "baseline_dataset_version": "1",
+      "example_count": 3
+    },
+    "simulated": {
+      "schema_type": "AGENTCORE_EVALUATION_SIMULATED_V1",
+      "dataset_id": "ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+      "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+      "dataset_name": "ecommerce_simulated_4ce1b35bc42e",
+      "status": "ACTIVE",
+      "draft_status": "MODIFIED",
+      "baseline_dataset_version": "1",
+      "example_count": 4
+    }
+  },
+  "local_mirrors": {
+    "postdeploy_ground_truth": "03-production-deployment/postdeploy_ground_truth.json",
+    "postdeploy_simulation_scenarios": "03-production-deployment/postdeploy_simulation_scenarios.json"
+  },
+  "example_counts": {
+    "predefined": 3,
+    "simulated": 4,
+    "excluded_from_predefined": 11,
+    "deferred_from_predefined": 1
+  },
+  "release_gate_scenario_ids": [
+    "release-gate-TC-INV-001",
+    "release-gate-TC-RBAC-001",
+    "release-gate-TC-OOS-001"
+  ],
+  "simulated_scenario_ids": [
+    "sim-TC-INV-001",
+    "sim-TC-RBAC-001",
+    "sim-TC-OOS-001",
+    "sim-TC-MULTI-001"
+  ],
+  "excluded_release_gate_records": [
+    {
+      "source_test_case_id": "TC-SEARCH-001",
+      "gate_decision": "fail",
+      "eligible_for_section_03a_ground_truth": false,
+      "role": "customer",
+      "category": "product_search"
+    },
+    {
+      "source_test_case_id": "TC-DETAILS-001",
+      "gate_decision": "fail",
+      "eligible_for_section_03a_ground_truth": false,
+      "role": "customer",
+      "category": "product_details"
+    },
+    {
+      "source_test_case_id": "TC-REC-001",
+      "gate_decision": "fail",
+      "eligible_for_section_03a_ground_truth": false,
+      "role": "customer",
+      "category": "recommendations"
+    },
+    {
+      "source_test_case_id": "TC-COMP-001",
+      "gate_decision": "fail",
+      "eligible_for_section_03a_ground_truth": false,
+      "role": "customer",
+      "category": "product_comparison"
+    },
+    {
+      "source_test_case_id": "TC-POLICY-001",
+      "gate_decision": "fail",
+      "eligible_for_section_03a_ground_truth": false,
+      "role": "customer",
+      "category": "return_policy"
+    },
+    {
+      "source_test_case_id": "TC-ADMIN-001",
+      "gate_decision": "fail",
+      "eligible_for_section_03a_ground_truth": false,
+      "role": "admin",
+      "category": "admin_write_ops"
+    },
+    {
+      "source_test_case_id": "TC-ADMIN-007",
+      "gate_decision": "fail",
+      "eligible_for_section_03a_ground_truth": false,
+      "role": "admin",
+      "category": "admin_write_ops"
+    },
+    {
+      "source_test_case_id": "TC-RBAC-006",
+      "gate_decision": "fail",
+      "eligible_for_section_03a_ground_truth": false,
+      "role": "customer",
+      "category": "rbac_boundary"
+    },
+    {
+      "source_test_case_id": "TC-RBAC-007",
+      "gate_decision": "fail",
+      "eligible_for_section_03a_ground_truth": false,
+      "role": "customer",
+      "category": "rbac_boundary"
+    },
+    {
+      "source_test_case_id": "TC-ADV-001",
+      "gate_decision": "fail",
+      "eligible_for_section_03a_ground_truth": false,
+      "role": "customer",
+      "category": "adversarial"
+    },
+    {
+      "source_test_case_id": "TC-ADV-005",
+      "gate_decision": "fail",
+      "eligible_for_section_03a_ground_truth": false,
+      "role": "customer",
+      "category": "adversarial"
+    }
+  ],
+  "deferred_predefined_release_gate_records": [
+    {
+      "source_test_case_id": "TC-MULTI-001",
+      "gate_decision": "pass",
+      "eligible_for_section_03a_ground_truth": true,
+      "role": "customer",
+      "category": "multi_turn",
+      "deferred_reason": "requires multi-turn runtime memory; retained in simulated scenarios until Section 03 introduces stateful conversation memory"
+    }
+  ],
+  "status": {
+    "draft_created": true,
+    "baseline_published": true,
+    "local_mirrors_written": true
+  },
+  "dataset_client_status": {
+    "requested": true,
+    "available": true,
+    "status": "CREATED_AND_PUBLISHED"
+  }
+}

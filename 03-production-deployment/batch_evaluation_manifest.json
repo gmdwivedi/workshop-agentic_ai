@@ -1,0 +1,84 @@
+{
+  "version": "1.0",
+  "artifact_type": "section_03_batch_evaluation_manifest",
+  "created_at": "2026-09-20T01:52:05Z",
+  "deployment_id": "section03-20260920T011910Z-8e5327b3",
+  "dataset_lineage_id": "dataset-lineage-4ce1b35bc42e",
+  "managed_datasets": {
+    "predefined": {
+      "schema_type": "AGENTCORE_EVALUATION_PREDEFINED_V1",
+      "dataset_id": "ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+      "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_release_gate_4ce1b35bc42e-BmBezvH9Wk",
+      "dataset_name": "ecommerce_release_gate_4ce1b35bc42e",
+      "status": "ACTIVE",
+      "draft_status": "MODIFIED",
+      "baseline_dataset_version": "1",
+      "example_count": 3
+    },
+    "simulated": {
+      "schema_type": "AGENTCORE_EVALUATION_SIMULATED_V1",
+      "dataset_id": "ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+      "dataset_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:dataset/ecommerce_simulated_4ce1b35bc42e-5h0j414HTT",
+      "dataset_name": "ecommerce_simulated_4ce1b35bc42e",
+      "status": "ACTIVE",
+      "draft_status": "MODIFIED",
+      "baseline_dataset_version": "1",
+      "example_count": 4
+    }
+  },
+  "source_section02": {
+    "run_id": "section02-release_gate-20260920T001132Z-00fa8fc9",
+    "dataset_version": "2.1",
+    "selected_slice": "release_gate",
+    "evaluator_registry_version": "1.0",
+    "release_gate_evidence_version": "1.0",
+    "thresholds_version": "release-gate-thresholds-v1",
+    "prompt_version": "product-catalog-prompts-v1",
+    "tool_policy_version": "product-catalog-tool-policy-v1"
+  },
+  "scenario_count": 3,
+  "evaluator_ids": [
+    "Builtin.Correctness",
+    "Builtin.GoalSuccessRate",
+    "Builtin.Helpfulness"
+  ],
+  "batch_evaluation": {
+    "batch_evaluation_id": "Section03Batch8e5327b30e000b-dee13562f5",
+    "batch_evaluation_arn": "arn:aws:bedrock-agentcore:us-east-1:961341519827:batch-evaluate/Section03Batch8e5327b30e000b-dee13562f5",
+    "batch_evaluation_name": "Section03Batch8e5327b30e000b",
+    "status": "COMPLETED",
+    "created_at": "2026-09-20 01:50:34.840064+00:00",
+    "updated_at": "2026-09-20 01:51:38.425780+00:00",
+    "error_details": [],
+    "agent_invocation_failures": [],
+    "output_data_config": {
+      "log_group_name": "/aws/bedrock-agentcore/evaluations/batch-evaluations/results/default",
+      "log_stream_name": "run-Section03Batch8e5327b30e000b-dee13562f5"
+    },
+    "sessions": {
+      "completed": 3,
+      "failed": 0,
+      "ignored": 0,
+      "in_progress": 0,
+      "total": 3
+    },
+    "evaluator_summaries": [
+      {
+        "evaluator_id": "Builtin.GoalSuccessRate",
+        "average_score": 1.0,
+        "total_evaluated": 3
+      },
+      {
+        "evaluator_id": "Builtin.Helpfulness",
+        "average_score": 0.89,
+        "total_evaluated": 3
+      },
+      {
+        "evaluator_id": "Builtin.Correctness",
+        "average_score": 1.0,
+        "total_evaluated": 3
+      }
+    ]
+  },
+  "batch_events_count": 9
+}

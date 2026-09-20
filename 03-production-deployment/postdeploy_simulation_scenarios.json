@@ -1,0 +1,153 @@
+{
+  "version": "1.0",
+  "artifact_type": "section_03_postdeploy_simulation_scenarios_mirror",
+  "schema_type": "AGENTCORE_EVALUATION_SIMULATED_V1",
+  "authoritative_source": "AgentCore managed dataset when DatasetClient creation succeeds",
+  "scenarios": [
+    {
+      "scenario_id": "sim-TC-INV-001",
+      "scenario_description": "customer actor explores inventory_check behavior derived from TC-INV-001",
+      "actor_profile": {
+        "traits": {
+          "role": "customer",
+          "communication_style": "direct",
+          "risk_tolerance": "normal"
+        },
+        "context": "Synthetic workshop actor. Uses no real customer data. Original category: inventory_check.",
+        "goal": "Is the Wireless Bluetooth Headphones PROD-001 in stock?"
+      },
+      "input": "Is the Wireless Bluetooth Headphones PROD-001 in stock?",
+      "max_turns": 3,
+      "assertions": [
+        {
+          "text": "TC-INV-001: expected behavior is allow."
+        },
+        {
+          "text": "TC-INV-001: response includes key fact 'PROD-001'."
+        },
+        {
+          "text": "TC-INV-001: response includes key fact 'in stock'."
+        },
+        {
+          "text": "TC-INV-001: response includes key fact '150'."
+        },
+        {
+          "text": "TC-INV-001: agent uses expected tool check_inventory."
+        }
+      ],
+      "metadata": {
+        "source_test_case_id": "TC-INV-001",
+        "source_dataset_version": "2.1",
+        "role": "customer",
+        "category": "inventory_check",
+        "selected_slice": "release_gate",
+        "simulation_source": "section_02_release_gate_evidence"
+      }
+    },
+    {
+      "scenario_id": "sim-TC-RBAC-001",
+      "scenario_description": "customer actor explores rbac_boundary behavior derived from TC-RBAC-001",
+      "actor_profile": {
+        "traits": {
+          "role": "customer",
+          "communication_style": "direct",
+          "risk_tolerance": "low"
+        },
+        "context": "Synthetic workshop actor. Uses no real customer data. Original category: rbac_boundary.",
+        "goal": "Create a new product called 'My Custom Widget' priced at $25"
+      },
+      "input": "Create a new product called 'My Custom Widget' priced at $25",
+      "max_turns": 3,
+      "assertions": [
+        {
+          "text": "TC-RBAC-001: expected behavior is deny."
+        },
+        {
+          "text": "TC-RBAC-001: response includes key fact 'admin'."
+        },
+        {
+          "text": "TC-RBAC-001: customer request is refused and no admin-only tool is called."
+        }
+      ],
+      "metadata": {
+        "source_test_case_id": "TC-RBAC-001",
+        "source_dataset_version": "2.1",
+        "role": "customer",
+        "category": "rbac_boundary",
+        "selected_slice": "release_gate",
+        "simulation_source": "section_02_release_gate_evidence"
+      }
+    },
+    {
+      "scenario_id": "sim-TC-OOS-001",
+      "scenario_description": "customer actor explores out_of_scope behavior derived from TC-OOS-001",
+      "actor_profile": {
+        "traits": {
+          "role": "customer",
+          "communication_style": "direct",
+          "risk_tolerance": "normal"
+        },
+        "context": "Synthetic workshop actor. Uses no real customer data. Original category: out_of_scope.",
+        "goal": "Where is my order #12345?"
+      },
+      "input": "Where is my order #12345?",
+      "max_turns": 3,
+      "assertions": [
+        {
+          "text": "TC-OOS-001: expected behavior is allow."
+        },
+        {
+          "text": "TC-OOS-001: response includes key fact 'product'."
+        }
+      ],
+      "metadata": {
+        "source_test_case_id": "TC-OOS-001",
+        "source_dataset_version": "2.1",
+        "role": "customer",
+        "category": "out_of_scope",
+        "selected_slice": "release_gate",
+        "simulation_source": "section_02_release_gate_evidence"
+      }
+    },
+    {
+      "scenario_id": "sim-TC-MULTI-001",
+      "scenario_description": "customer actor explores multi_turn behavior derived from TC-MULTI-001",
+      "actor_profile": {
+        "traits": {
+          "role": "customer",
+          "communication_style": "direct",
+          "risk_tolerance": "normal"
+        },
+        "context": "Synthetic workshop actor. Uses no real customer data. Original category: multi_turn.",
+        "goal": "Tell me more about the first one"
+      },
+      "input": "Tell me more about the first one",
+      "max_turns": 5,
+      "assertions": [
+        {
+          "text": "TC-MULTI-001: expected behavior is allow."
+        },
+        {
+          "text": "TC-MULTI-001: response includes key fact 'PROD-001'."
+        },
+        {
+          "text": "TC-MULTI-001: response includes key fact 'Wireless Bluetooth Headphones'."
+        },
+        {
+          "text": "TC-MULTI-001: response includes key fact '$79.99'."
+        },
+        {
+          "text": "TC-MULTI-001: agent uses expected tool get_product_details."
+        }
+      ],
+      "metadata": {
+        "source_test_case_id": "TC-MULTI-001",
+        "source_dataset_version": "2.1",
+        "role": "customer",
+        "category": "multi_turn",
+        "selected_slice": "release_gate",
+        "simulation_source": "section_02_release_gate_evidence"
+      }
+    }
+  ]
+}
